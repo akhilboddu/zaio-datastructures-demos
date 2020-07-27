@@ -10,7 +10,7 @@ BINDIR = bin
 DOCDIR = doc
 TESTDIR = test
 
-JUNIT = ../junit/junit-4.12.jar -sourcepath ./src ./test/$*.java
+JUNIT = ../junit/junit-4.12.jar -sourcepath ./src ./src/$*.java
 
 JAVAC = javac
 JFLAGS = -g -d $(BINDIR) -cp $(BINDIR)
@@ -25,27 +25,20 @@ vpath %.class $(BINDIR)
 .java.class:
 	$(JAVAC) $(JFLAGS) $<
 
-classes: BinaryTreeNode.class BinaryTree.class BinarySearchTree.class \
-     	 QueryGenerator.class eDirectory.class PrintIt.class \
-     	 SearchIt.class SearchItLinear.class \
+classes: StackArray.class
 
 default: $(CLASSES)
 
 doc:
 	javadoc -d $(DOCDIR) -cp $(DOCDIR) $(SRCDIR)/*.java
 
-test_classes: SearchItLinearTest.class eDirectoryTest.class SearchItTest.class PrintItTest.class
+test_classes: StackArray.class
 	      
 junit: test_classes
 	
-SearchItLinearTest.class: SearchItLinearTest.java
+StackArray.class: StackArray.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-eDirectoryTest.class: eDirectoryTest.java
-	javac -d $(BINDIR) -cp $(JUNIT)
-PrintItTest.class: PrintItTest.java
-	javac -d $(BINDIR) -cp $(JUNIT)
-SearchItTest.class: SearchItTest.java
-	javac -d $(BINDIR) -cp $(JUNIT)
+
 
 #test_classes: SearchItLinearTest.java eDirectoryTest.java #SearchItTest.java PrintItTest.java
 	      
