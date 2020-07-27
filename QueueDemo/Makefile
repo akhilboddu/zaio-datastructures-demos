@@ -25,20 +25,20 @@ vpath %.class $(BINDIR)
 .java.class:
 	$(JAVAC) $(JFLAGS) $<
 
-classes: QueueArray.class JavaStack.class
+classes: QueueArray.class JavaQueue.class
 
 default: $(CLASSES)
 
 doc:
 	javadoc -d $(DOCDIR) -cp $(DOCDIR) $(SRCDIR)/*.java
 
-test_classes: QueueArray.class JavaStack.class
+test_classes: QueueArray.class JavaQueue.class
 	      
 junit: test_classes
 	
 QueueArray.class: QueueArray.java
 	javac -d $(BINDIR) -cp $(JUNIT)
-JavaStack.class: JavaStack.java
+JavaQueue.class: JavaQueue.java
 	javac -d $(BINDIR) -cp $(JUNIT)
 
 
