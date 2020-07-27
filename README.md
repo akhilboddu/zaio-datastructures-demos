@@ -1,6 +1,6 @@
 # Data Structures course with the demos
 
-You can click[here](https://www.youtube.com/playlist?list=PL9fiukdv2Gbqop9Dh9eAfahmkt61kb3vI) to checkout the playlist on youtube.
+You can click [here](https://www.youtube.com/playlist?list=PL9fiukdv2Gbqop9Dh9eAfahmkt61kb3vI) to checkout the playlist on youtube.
 
 ## Installation
 
