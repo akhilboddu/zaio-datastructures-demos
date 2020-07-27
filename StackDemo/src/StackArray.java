@@ -28,6 +28,12 @@ class StackArray {
         return stackArray[top];
     }
 
+    public String pop() {
+        String removingValue = stackArray[top];
+        top -= 1;
+        return removingValue;
+    }
+
     public void print() {
         System.out.print("Top of stack");
         for (int i = top; i >= 0; i--) {
@@ -49,6 +55,10 @@ class StackArray {
 
         stack.push("Zolotov");
         stack.push("Harjot");
+
+        stack.print();
+
+        System.out.println("Removing... " + stack.pop());
 
         // System.out.println(stack.empty());
 
