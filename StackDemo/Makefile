@@ -25,18 +25,20 @@ vpath %.class $(BINDIR)
 .java.class:
 	$(JAVAC) $(JFLAGS) $<
 
-classes: StackArray.class
+classes: StackArray.class JavaStack.class
 
 default: $(CLASSES)
 
 doc:
 	javadoc -d $(DOCDIR) -cp $(DOCDIR) $(SRCDIR)/*.java
 
-test_classes: StackArray.class
+test_classes: StackArray.class JavaStack.class
 	      
 junit: test_classes
 	
 StackArray.class: StackArray.java
+	javac -d $(BINDIR) -cp $(JUNIT)
+JavaStack.class: JavaStack.java
 	javac -d $(BINDIR) -cp $(JUNIT)
 
 
